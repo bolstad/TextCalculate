@@ -53,4 +53,12 @@ class PlaceholderCalcTest extends \PHPUnit_Framework_TestCase
     }
 
 
+    public function testJsonStuff()
+    {
+        $jsonData = json_decode('{"id":4357,"changedfields":0,"date":196440,"user_id":0,"exp_portalvisit":1,"see_portaldisc":0,"hac_hacks":227,"bui_resdeploy":165,"con_linkscreated":7,"min_fieldscreated":0,"pur_resdestroyed":694,"pur_linksdestroyed":152,"pur_fieldsdestroyed":78,"gua_maxtime":2,"dis_xm":1552122,"bui_mucap":0,"bui_longlink":0,"bui_lafield":0,"bui_xmrecharged":1006996,"bui_portalcap":43,"bui_unportalcap":1,"com_portalsneut":100,"def_linkmain":0,"def_linkxdays":0,"def_fieldheld":0,"def_muxdays":0,"hea_distance":7,"innovator":0,"mis_completed":0,"bui_moddeploy":41,"hac_glyph":248,"hac_days":0,"web":0,"logid":4201,"initial":0,"reminder":0,"vanguard":0,"luminary":0,"_uniq":352537075}
+',1);
+
+        print_r($jsonData);
+        $this->assertEquals($this->cal->calculate('com_portalsneut + bui_portalcap + pur_resdestroyed + con_linkscreated + min_fieldscreated', $jsonData),844);
+    }
 }

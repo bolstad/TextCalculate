@@ -40,6 +40,7 @@ namespace Bolstad\TextCalculate {
                 $input = str_replace($placeholder, $value, $input);
             }
 
+            echo "parsed '$input'\n";
             $calc = new FieldCalc();
             $result = $calc->calculate($input);
 

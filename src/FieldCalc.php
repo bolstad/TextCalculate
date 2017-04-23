@@ -46,7 +46,7 @@ class FieldCalc
             // Replace , with .
             $input = str_replace(',', '.', $input);
             //  Remove white spaces and invalid math chars - and everything that isn't numbers
-            $input = preg_replace('[^0-9\.\+\-\*\/\(\)]', '', $input);
+            $input = preg_replace('/[^0-9\.\+\-\*\/\(\)]/', '', $input);
 
             //  Calculate each of the parenthesis from the top
             $i = 0;
